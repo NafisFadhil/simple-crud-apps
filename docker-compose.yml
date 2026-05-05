@@ -5,7 +5,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: simple-crud-app
     container_name: simple-crud-app
     restart: unless-stopped
     working_dir: /var/www
