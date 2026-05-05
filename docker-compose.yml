@@ -9,20 +9,15 @@ services:
     container_name: simple-crud-app
     restart: unless-stopped
     working_dir: /var/www
-    volumes:
-      - ./:/var/www
-      - /var/www/node_modules
     networks:
       - simple-crud-network
 
   web:
     build:
-      context: ./docker/nginx
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: docker/nginx/Dockerfile
     container_name: simple-crud-web
     restart: unless-stopped
-    volumes:
-      - ./:/var/www
     depends_on:
       - app
     networks:
